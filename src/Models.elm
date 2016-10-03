@@ -1,8 +1,13 @@
 module Models exposing (..)
 
+import Layouts exposing (Layout(..))
+import Books.Models exposing (Book)
+
 type alias Model =
-    String
+    { layout : Layout
+    , books : List Book
+    }
 
 initialModel : Model
 initialModel =
-    "Things"
+    Model FrontPage Books.Models.initialModel
