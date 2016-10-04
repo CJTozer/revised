@@ -1,6 +1,7 @@
 module Books.View exposing (..)
 
 import Html exposing (..)
+import Html.Attributes exposing (class)
 
 import Books.Models exposing (Book)
 import Messages exposing (Msg)
@@ -19,7 +20,7 @@ bookList books =
                 ]
     in
         div []
-            [ table []
+            [ table [ class "bordered highlight" ]
                 [ thead []
                     [ tr []
                         [ th [] [ text "Title" ]

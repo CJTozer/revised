@@ -1,6 +1,7 @@
 module View exposing (..)
 
 import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
 
 import Models exposing (Model)
 import Messages exposing (Msg)
@@ -13,5 +14,5 @@ view : Model -> Html Msg
 view model =
     case model.layout of
         FrontPage ->
-            div []
+            div [ class "container" ]
                 [ bookList model.books ]
