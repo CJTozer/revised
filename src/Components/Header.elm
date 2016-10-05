@@ -8,6 +8,7 @@ import Messages exposing (Msg)
 
 pageHeader : Html Msg
 pageHeader =
+    -- http://materializecss.com/navbar.html
     header []
         [ nav [ class "top-nav teal lighten-2" ]
             [ div [ class "container" ]

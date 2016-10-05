@@ -48,5 +48,4 @@ module.exports = {
     inline: true,
     stats: { colors: true },
   },
-
 };
