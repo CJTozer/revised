@@ -1,4 +1,6 @@
 module Messages exposing (..)
 
+import Books.Messages
+
 type Msg
-    = NoOp
+    = BooksMsg Books.Messages.Msg

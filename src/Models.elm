@@ -10,4 +10,6 @@ type alias Model =
 
 initialModel : Model
 initialModel =
-    Model FrontPage Books.Models.initialModel
+    { layout = FrontPage
+    , books = []
+    }
