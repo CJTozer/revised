@@ -2,7 +2,7 @@ package main
 
 import (
     "log"
-    // "net/http"
+    "net/http"
     "os"
 
     "github.com/gin-gonic/gin"
@@ -15,24 +15,22 @@ func main() {
         log.Fatal("$PORT must be set")
     }
 
+    // Main page (not on "/" as Static can't be overridden for the data API)
     router := gin.Default()
-    router.Static("/", "./dist")
-    router.LoadHTMLFiles("dist/index.html")
-    // router.GET("/", func(c *gin.Context) {
-    //     c.HTML(200, "./dist/index.html", gin.H{
-    //         "title": "reVISed",
-    //     })
-    // })
+    router.Static("/main", "./dist")
+    router.GET("/", func(c *gin.Context) {
+        c.Redirect(http.StatusSeeOther, "/main")
+    })
 
-    // // For later
-    // api := router.Group("/api")
-    // {
-    //     api.GET("/events", func(c *gin.Context) {
-    //         c.JSON(200, gin.H{
-    //             "message": "pong",
-    //         })
-    //     })
-    // }
+    // Data API (TODO)
+    api := router.Group("/data")
+    {
+        api.GET("/test", func(c *gin.Context) {
+            c.JSON(http.StatusOK, gin.H{
+                "message": "pong",
+            })
+        })
+    }
 
     router.Run(":" + port)
 }
