@@ -26,5 +26,5 @@ collectionDecoder =
 memberDecoder : Decode.Decoder Book
 memberDecoder =
     Decode.object2 Book
-        ("Title" := Decode.string)
-        ("Author" := Decode.string)
+        ("title" := Decode.string)
+        ("author" := Decode.string)
