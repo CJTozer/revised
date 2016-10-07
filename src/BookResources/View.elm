@@ -6,13 +6,14 @@ import Html.Attributes exposing (class)
 import BookResources.Models exposing (BookResource)
 import BookResources.Messages exposing (Msg)
 
+import Styles
 
 resourcesList : List BookResource -> Html Msg
 resourcesList resources =
     let
         resourceRow : BookResource -> Html Msg
         resourceRow resource =
-            tr []
+            tr [ Styles.clickableRow ]
                 [ td []
                     [ text ( toString resource.chapter ) ]
                 , td []

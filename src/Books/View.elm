@@ -11,13 +11,15 @@ import Books.Messages exposing (..)
 import BookResources.View exposing (resourcesList)
 import BookResources.Models exposing (initialModel)
 
+import Styles
+
 bookList : List Book -> Html Msg
 bookList books =
     let
         bookRow : Book -> Html Msg
         bookRow book =
             -- @@@ Need Book ID
-            tr [ onClick (ShowBook) ]
+            tr [ onClick (ShowBook), Styles.clickableRow ]
                 [ td []
                     [ text book.title ]
                 , td []
