@@ -1,10 +1,11 @@
 module View exposing (..)
 
 import Html exposing (..)
+import Html.App
 import Html.Attributes exposing (class)
 
 import Models exposing (Model)
-import Messages exposing (Msg)
+import Messages exposing (..)
 import Routing exposing (Route(..))
 
 import Books.View exposing (bookList, bookDetails)
@@ -18,7 +19,7 @@ view model =
         BooksRoute ->
             div []
                 [ pageHeader
-                , main' [] [ bookList model.books ]
+                , main' [] [ Html.App.map BooksMsg (bookList model.books) ]
                 , pageFooter
                 ]
         BookRoute bookID ->
@@ -30,7 +31,7 @@ view model =
                     Just b ->
                         div []
                             [ pageHeader
-                            , main' [] [ bookDetails b ]
+                            , main' [] [ Html.App.map BooksMsg (bookDetails b) ]
                             , pageFooter
                             ]
                     Nothing ->

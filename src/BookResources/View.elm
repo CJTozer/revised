@@ -4,7 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (class)
 
 import BookResources.Models exposing (BookResource)
-import Messages exposing (Msg)
+import BookResources.Messages exposing (Msg)
 
 
 resourcesList : List BookResource -> Html Msg
