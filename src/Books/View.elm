@@ -6,6 +6,7 @@ import Html.Attributes exposing (class)
 import Books.Models exposing (Book)
 import Messages exposing (Msg)
 
+import BookResources.View exposing (resourcesList)
 
 bookList : List Book -> Html Msg
 bookList books =
@@ -19,16 +20,25 @@ bookList books =
                     [ text book.author ]
                 ]
     in
-        div []
-            [ table [ class "bordered highlight" ]
-                [ thead []
-                    [ tr []
-                        [ th [] [ text "Title" ]
-                        , th [] [ text "Author" ]
+        div [ class "container" ]
+            [ h1 [] [ text "Books" ]
+            , div []
+                [ table [ class "bordered highlight" ]
+                    [ thead []
+                        [ tr []
+                            [ th [] [ text "Title" ]
+                            , th [] [ text "Author" ]
+                            ]
                         ]
+                    , tbody []
+                        ( List.map bookRow books )
                     ]
-                , tbody []
-                    ( List.map bookRow books )
                 ]
             ]
 
+bookDetails : Book -> Html Msg
+bookDetails book =
+    div [ class "container" ]
+        [ h1 [] [ text book.title ]
+        , resourcesList book.resources
+        ]

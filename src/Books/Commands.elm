@@ -6,25 +6,29 @@ import Task
 import Books.Models exposing (Book)
 import Books.Messages exposing (..)
 
+import BookResources.Models exposing (BookResource)
+import BookResources.Commands exposing (resourceListDecoder, resourceDecoder)
+
 
 fetchAll : Cmd Msg
 fetchAll =
-    Http.get collectionDecoder fetchAllUrl
+    Http.get bookListDecoder fetchBooksListUrl
         |> Task.perform FetchAllFail FetchAllDone
 
 
-fetchAllUrl : String
-fetchAllUrl =
+fetchBooksListUrl : String
+fetchBooksListUrl =
     "https://revised-server.herokuapp.com/v1/books"
 
 
-collectionDecoder : Decode.Decoder (List Book)
-collectionDecoder =
-    Decode.list memberDecoder
+bookListDecoder : Decode.Decoder (List Book)
+bookListDecoder =
+    Decode.list bookDecoder
 
 
-memberDecoder : Decode.Decoder Book
-memberDecoder =
-    Decode.object2 Book
+bookDecoder : Decode.Decoder Book
+bookDecoder =
+    Decode.object3 Book
         ("title" := Decode.string)
         ("author" := Decode.string)
+        ((Decode.maybe ("resources" := Decode.list resourceDecoder)) `Decode.andThen` resourceListDecoder)

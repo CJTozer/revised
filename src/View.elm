@@ -7,8 +7,7 @@ import Models exposing (Model)
 import Messages exposing (Msg)
 import Layouts exposing (Layout(..))
 
-import Books.View exposing (bookList)
-import BookResources.View exposing (resourcesList)
+import Books.View exposing (bookList, bookDetails)
 import Components.Header exposing (pageHeader)
 import Components.Footer exposing (pageFooter)
 
@@ -19,22 +18,12 @@ view model =
         FrontPage ->
             div []
                 [ pageHeader
-                , main' [] [
-                    div [ class "container" ]
-                        [ h1 [] [ text "Books" ]
-                        , bookList model.books
-                        ]
-                    ]
+                , main' [] [ bookList model.books ]
                 , pageFooter
                 ]
-        BookPage ->
+        BookPage book ->
             div []
                 [ pageHeader
-                , main' [] [
-                    div [ class "container" ]
-                        [ h1 [] [ text "Resources" ]
-                        , resourcesList model.bookResources
-                        ]
-                    ]
+                , main' [] [ bookDetails book ]
                 , pageFooter
                 ]

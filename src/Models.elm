@@ -7,12 +7,10 @@ import BookResources.Models exposing (BookResource)
 type alias Model =
     { layout : Layout
     , books : List Book
-    , bookResources : List BookResource
     }
 
 initialModel : Model
 initialModel =
-    { layout = BookPage
+    { layout = FrontPage
     , books = []
-    , bookResources = BookResources.Models.initialModel
     }
