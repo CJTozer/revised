@@ -7,6 +7,7 @@ import Books.Models exposing (Book)
 import Messages exposing (Msg)
 
 import BookResources.View exposing (resourcesList)
+import BookResources.Models exposing (initialModel)
 
 bookList : List Book -> Html Msg
 bookList books =
@@ -40,5 +41,5 @@ bookDetails : Book -> Html Msg
 bookDetails book =
     div [ class "container" ]
         [ h1 [] [ text book.title ]
-        , resourcesList (Maybe.withDefault [] book.resources)
+        , resourcesList (Maybe.withDefault initialModel book.resources)
         ]

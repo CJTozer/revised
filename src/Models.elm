@@ -3,14 +3,15 @@ module Models exposing (..)
 import Layouts exposing (Layout(..))
 import Books.Models exposing (Book)
 import BookResources.Models exposing (BookResource)
+import Routing
 
 type alias Model =
-    { layout : Layout
+    { route : Routing.Route
     , books : List Book
     }
 
-initialModel : Model
-initialModel =
-    { layout = FrontPage
+initialModel : Routing.Route -> Model
+initialModel route =
+    { route = route
     , books = []
     }

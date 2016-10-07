@@ -6,7 +6,7 @@ import Books.Models exposing (Book)
 
 update : Msg -> List Book -> ( List Book, Cmd Msg )
 update message books =
-    case Debug.log "message" message of
+    case message of
         FetchAllDone newBooks ->
             ( newBooks, Cmd.none )
 
