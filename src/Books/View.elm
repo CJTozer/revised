@@ -28,7 +28,7 @@ bookList books =
                         ]
                     ]
                 , tbody []
-                    (List.map bookRow books)
+                    ( List.map bookRow books )
                 ]
             ]
 

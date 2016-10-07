@@ -8,6 +8,7 @@ import Messages exposing (Msg)
 import Layouts exposing (Layout(..))
 
 import Books.View exposing (bookList)
+import BookResources.View exposing (resourcesList)
 import Components.Header exposing (pageHeader)
 import Components.Footer exposing (pageFooter)
 
@@ -22,6 +23,17 @@ view model =
                     div [ class "container" ]
                         [ h1 [] [ text "Books" ]
                         , bookList model.books
+                        ]
+                    ]
+                , pageFooter
+                ]
+        BookPage ->
+            div []
+                [ pageHeader
+                , main' [] [
+                    div [ class "container" ]
+                        [ h1 [] [ text "Resources" ]
+                        , resourcesList model.bookResources
                         ]
                     ]
                 , pageFooter
