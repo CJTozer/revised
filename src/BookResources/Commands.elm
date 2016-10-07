@@ -18,15 +18,6 @@ import BookResources.Models exposing (BookResource)
 --    "https://revised-server.herokuapp.com/v1/books"
 
 
-resourceListDecoder : Maybe (List BookResource) -> Decode.Decoder (List BookResource)
-resourceListDecoder maybeList =
-    case maybeList of
-        Just resourcesList ->
-            Decode.list resourceDecoder
-        Nothing ->
-            Decode.succeed []
-
-
 resourceDecoder : Decode.Decoder BookResource
 resourceDecoder =
     Decode.object3 BookResource

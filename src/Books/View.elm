@@ -40,5 +40,5 @@ bookDetails : Book -> Html Msg
 bookDetails book =
     div [ class "container" ]
         [ h1 [] [ text book.title ]
-        , resourcesList book.resources
+        , resourcesList (Maybe.withDefault [] book.resources)
         ]

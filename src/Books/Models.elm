@@ -7,5 +7,5 @@ type alias Model =
 type alias Book =
     { title : String
     , author : String
-    , resources: List BookResource
+    , resources: Maybe (List BookResource)
     }

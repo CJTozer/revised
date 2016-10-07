@@ -7,7 +7,7 @@ import Books.Models exposing (Book)
 import Books.Messages exposing (..)
 
 import BookResources.Models exposing (BookResource)
-import BookResources.Commands exposing (resourceListDecoder, resourceDecoder)
+import BookResources.Commands exposing (resourceDecoder)
 
 
 fetchAll : Cmd Msg
@@ -31,4 +31,4 @@ bookDecoder =
     Decode.object3 Book
         ("title" := Decode.string)
         ("author" := Decode.string)
-        ((Decode.maybe ("resources" := Decode.list resourceDecoder)) `Decode.andThen` resourceListDecoder)
+        (Decode.maybe ("resources" := Decode.list resourceDecoder))
