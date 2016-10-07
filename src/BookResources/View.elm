@@ -13,7 +13,7 @@ resourcesList resources =
     let
         resourceRow : BookResource -> Html Msg
         resourceRow resource =
-            tr [ Styles.clickableRow ]
+            tr [ Styles.clickable ]
                 [ td []
                     [ text ( toString resource.chapter ) ]
                 , td []

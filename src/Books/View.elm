@@ -19,7 +19,7 @@ bookList books =
         bookRow : Book -> Html Msg
         bookRow book =
             -- @@@ Need Book ID
-            tr [ onClick (ShowBook), Styles.clickableRow ]
+            tr [ onClick (ShowBook), Styles.clickable ]
                 [ td []
                     [ text book.title ]
                 , td []

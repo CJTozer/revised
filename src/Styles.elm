@@ -2,5 +2,5 @@ module Styles exposing (..)
 
 import Html.Attributes exposing (class, style)
 
-clickableRow =
+clickable =
     style [("cursor", "pointer")]
