@@ -29,18 +29,21 @@ urlUpdate result model =
     let
         currentRoute =
             Routing.routeFromResult result
-        currentLayout = case currentRoute of
-            BooksRoute ->
-                FrontPage
-            _ ->
-                -- Handled elswhere, one hopes!
-                model.layout
+        currentLayout = layoutFromRoute currentRoute model
     in
         ( { model
             | route = currentRoute
             , layout = currentLayout
             }, Cmd.none )
 
+layoutFromRoute : Route -> Model -> Layout
+layoutFromRoute route model =
+    case route of
+        BooksRoute ->
+            FrontPage
+        _ ->
+            -- Handled elswhere, one hopes!
+            model.layout
 
 -- MAIN
 main : Program Never
