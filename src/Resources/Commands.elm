@@ -4,23 +4,21 @@ import Http
 import Json.Decode as Decode exposing ((:=))
 import Task
 import Resources.Models exposing (Resource)
---import Resources.Messages exposing (..)
+import Resources.Messages exposing (Msg(..))
 
+fetchOne : Int -> Cmd Msg
+fetchOne resourceId =
+    Http.get resourceDecoder (fetchResourceUrl resourceId)
+        |> Task.perform FetchFail FetchDone
 
---fetchAll : Cmd Msg
---fetchAll =
---    Http.get bookListDecoder fetchBooksListUrl
---        |> Task.perform FetchAllFail FetchAllDone
-
-
---fetchBooksListUrl : String
---fetchBooksListUrl =
---    "http://revised-server.herokuapp.com/v1/books"
+fetchResourceUrl : Int -> String
+fetchResourceUrl resourceId =
+    "http://revised-server.herokuapp.com/v1/resources/" ++ toString(resourceId)
 
 
 resourceDecoder : Decode.Decoder Resource
 resourceDecoder =
     Decode.object3 Resource
-        ("chapter" := Decode.int)
-        ("order" := Decode.int)
+        ("resource_id" := Decode.int)
+        ("resource_type" := Decode.string)
         ("text" := Decode.string)

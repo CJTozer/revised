@@ -6,43 +6,37 @@ import Html.Attributes exposing (class)
 
 import Models exposing (Model)
 import Messages exposing (..)
-import Routing exposing (Route(..))
+import Layouts exposing (Layout(..))
 
-import Books.View exposing (bookList, bookDetails)
+import Books.View exposing (bookList, bookHeader)
+import Resources.View exposing (resourcesList)
 import Components.Header exposing (pageHeader)
 import Components.Footer exposing (pageFooter)
 
 
 view : Model -> Html Msg
 view model =
-    case model.route of
-        BooksRoute ->
+    case model.layout of
+        FrontPage ->
             div []
                 [ pageHeader
                 , main' [] [ Html.App.map BooksMsg (bookList model.books) ]
                 , pageFooter
                 ]
-        BookRoute bookID ->
-            let
-                -- TODO Get the right book by it's ID
-                book = List.head (List.filter (\x -> x.book_id == bookID) model.books)
-            in
-                case book of
-                    Just b ->
-                        div []
-                            [ pageHeader
-                            , main' [] [ Html.App.map BooksMsg (bookDetails b) ]
-                            , pageFooter
-                            ]
-                    Nothing ->
-                        div []
-                            [ pageHeader
-                            , main' [] [ text "BOOK NOT FOUND" ]
-                            , pageFooter
-                            ]
-        NotFoundRoute ->
+        BookPage book ->
             div []
                 [ pageHeader
-                , main' [] [ text "PAGE NOT FOUND" ]
+                , main' []
+                    [ div [ class "container" ]
+                        [ Html.App.map BooksMsg (bookHeader book)
+                        , Html.App.map ResourcesMsg (resourcesList (Maybe.withDefault [] book.resources))
+                        ]
+                    ]
                 , pageFooter
                 ]
+        --NotFoundRoute ->
+        --    div []
+        --        [ pageHeader
+        --        , main' [] [ text "PAGE NOT FOUND" ]
+        --        , pageFooter
+        --        ]

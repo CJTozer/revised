@@ -15,8 +15,12 @@ update message books =
         FetchAllFail error ->
             ( books, Cmd.none )
 
-        ShowBook id ->
-            ( books, Navigation.newUrl ("#books/" ++ toString(id)))
-
-        ResourceMsg _ ->
+        ShowBook book ->
+            --( books, Navigation.newUrl ("#books/" ++ toString(id)))
             ( books, Cmd.none )
+
+        Ignore msg ->
+            let
+                _ = Debug.log "Books/Update.elm - UNHANDLED MESSAGE" msg
+            in
+                ( books, Cmd.none )

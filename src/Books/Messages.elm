@@ -7,5 +7,5 @@ import Resources.Messages
 type Msg
     = FetchAllDone (List Book)
     | FetchAllFail Http.Error
-    | ShowBook Int
-    | ResourceMsg Resources.Messages.Msg
+    | ShowBook Book
+    | Ignore Resources.Messages.Msg

@@ -9,6 +9,7 @@ import View exposing (view)
 import Update exposing (update)
 import Books.Commands exposing (fetchAll)
 import Routing exposing (Route)
+import Layouts exposing (Layout(..))
 
 
 init : Result String Route -> ( Model, Cmd Msg )
@@ -16,8 +17,11 @@ init result =
     let
         currentRoute =
             Routing.routeFromResult result
+        --TODO - calculate this properly...
+        currentLayout =
+            FrontPage
     in
-        ( initialModel currentRoute, Cmd.map BooksMsg fetchAll )
+        ( initialModel currentRoute currentLayout, Cmd.map BooksMsg fetchAll )
 
 
 urlUpdate : Result String Route -> Model -> ( Model, Cmd Msg )

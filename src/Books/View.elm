@@ -18,7 +18,7 @@ bookList books =
     let
         bookRow : Book -> Html Msg
         bookRow book =
-            tr [ onClick (ShowBook book.book_id), Styles.clickable ]
+            tr [ onClick (ShowBook book), Styles.clickable ]
                 [ td []
                     [ text book.title ]
                 , td []
@@ -41,9 +41,6 @@ bookList books =
                 ]
             ]
 
-bookDetails : Book -> Html Msg
-bookDetails book =
-    div [ class "container" ]
-        [ h1 [] [ text book.title ]
-        , Html.App.map ResourceMsg (resourcesList (Maybe.withDefault initialModel book.resources))
-        ]
+bookHeader : Book -> Html Msg
+bookHeader book =
+    h1 [] [ text book.title ]

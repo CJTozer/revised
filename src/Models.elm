@@ -7,11 +7,15 @@ import Routing
 
 type alias Model =
     { route : Routing.Route
+    , layout : Layout
     , books : List Book
+    , resources : List Resource
     }
 
-initialModel : Routing.Route -> Model
-initialModel route =
+initialModel : Routing.Route -> Layout -> Model
+initialModel route layout =
     { route = route
+    , layout = layout
     , books = []
+    , resources = []
     }
