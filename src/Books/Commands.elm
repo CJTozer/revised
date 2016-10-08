@@ -18,7 +18,7 @@ fetchAll =
 
 fetchBooksListUrl : String
 fetchBooksListUrl =
-    "http://revised-server.herokuapp.com/v1/books"
+    "https://revised-server.herokuapp.com/v1/books"
 
 
 bookListDecoder : Decode.Decoder (List Book)
