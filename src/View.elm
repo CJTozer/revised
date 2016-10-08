@@ -25,7 +25,7 @@ view model =
         BookRoute bookID ->
             let
                 -- TODO Get the right book by it's ID
-                book = List.head model.books
+                book = List.head (List.filter (\x -> x.book_id == bookID) model.books)
             in
                 case book of
                     Just b ->

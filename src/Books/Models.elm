@@ -1,11 +1,10 @@
 module Books.Models exposing (..)
 
-import BookResources.Models exposing (BookResource)
-
 type alias Model =
     List Book
 type alias Book =
-    { title : String
+    { book_id: Int
+    , title : String
     , author : String
-    , resources: Maybe (List BookResource)
+    , resources: Maybe (List Int)
     }

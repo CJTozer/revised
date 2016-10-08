@@ -6,8 +6,8 @@ import Task
 import Books.Models exposing (Book)
 import Books.Messages exposing (..)
 
-import BookResources.Models exposing (BookResource)
-import BookResources.Commands exposing (resourceDecoder)
+import Resources.Models exposing (Resource)
+import Resources.Commands exposing (resourceDecoder)
 
 
 fetchAll : Cmd Msg
@@ -28,7 +28,8 @@ bookListDecoder =
 
 bookDecoder : Decode.Decoder Book
 bookDecoder =
-    Decode.object3 Book
+    Decode.object4 Book
+        ("book_id" := Decode.int)
         ("title" := Decode.string)
         ("author" := Decode.string)
-        (Decode.maybe ("resources" := Decode.list resourceDecoder))
+        (Decode.maybe ("resources" := Decode.list Decode.int))

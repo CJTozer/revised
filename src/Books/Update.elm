@@ -15,8 +15,8 @@ update message books =
         FetchAllFail error ->
             ( books, Cmd.none )
 
-        ShowBook -> -- id
-            ( books, Navigation.newUrl "#books/123")
+        ShowBook id ->
+            ( books, Navigation.newUrl ("#books/" ++ toString(id)))
 
         ResourceMsg _ ->
             ( books, Cmd.none )

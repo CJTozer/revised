@@ -8,8 +8,8 @@ import Html.App
 import Books.Models exposing (Book)
 import Books.Messages exposing (..)
 
-import BookResources.View exposing (resourcesList)
-import BookResources.Models exposing (initialModel)
+import Resources.View exposing (resourcesList)
+import Resources.Models exposing (initialModel)
 
 import Styles
 
@@ -18,8 +18,7 @@ bookList books =
     let
         bookRow : Book -> Html Msg
         bookRow book =
-            -- @@@ Need Book ID
-            tr [ onClick (ShowBook), Styles.clickable ]
+            tr [ onClick (ShowBook book.book_id), Styles.clickable ]
                 [ td []
                     [ text book.title ]
                 , td []

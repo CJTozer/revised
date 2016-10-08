@@ -2,10 +2,10 @@ module Books.Messages exposing (..)
 
 import Http
 import Books.Models exposing (Book)
-import BookResources.Messages
+import Resources.Messages
 
 type Msg
     = FetchAllDone (List Book)
     | FetchAllFail Http.Error
-    | ShowBook -- BookID
-    | ResourceMsg BookResources.Messages.Msg
+    | ShowBook Int
+    | ResourceMsg Resources.Messages.Msg

@@ -2,7 +2,7 @@ module Models exposing (..)
 
 import Layouts exposing (Layout(..))
 import Books.Models exposing (Book)
-import BookResources.Models exposing (BookResource)
+import Resources.Models exposing (Resource)
 import Routing
 
 type alias Model =
