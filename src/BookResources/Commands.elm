@@ -15,7 +15,7 @@ import BookResources.Models exposing (BookResource)
 
 --fetchBooksListUrl : String
 --fetchBooksListUrl =
---    "https://revised-server.herokuapp.com/v1/books"
+--    "http://revised-server.herokuapp.com/v1/books"
 
 
 resourceDecoder : Decode.Decoder BookResource
