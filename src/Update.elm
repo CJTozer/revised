@@ -30,10 +30,10 @@ handleMessage msg model =
                 ( updatedResources, cmd ) =
                     Resources.Update.update subMsg model.resources
             in
-                ( { model | resources = updatedResources }, Cmd.map ResourcesMsg cmd )
+                ( { model | resources = updatedResources }, cmd )
         UpdateLayout newLayout ->
             ( { model | layout = newLayout }, Cmd.none )
 
 dataRetrieval : Model -> ( List (Cmd Msg) )
 dataRetrieval model =
-    []
+    Resources.Update.dataRetrieval model

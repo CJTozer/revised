@@ -8,7 +8,7 @@ import Models exposing (Model, initialModel)
 import View exposing (view)
 import Update exposing (update)
 import Books.Commands exposing (fetchAll)
-import Routing exposing (Route)
+import Routing exposing (Route(..))
 import Layouts exposing (Layout(..))
 
 
@@ -29,8 +29,17 @@ urlUpdate result model =
     let
         currentRoute =
             Routing.routeFromResult result
+        currentLayout = case currentRoute of
+            BooksRoute ->
+                FrontPage
+            _ ->
+                -- Handled elswhere, one hopes!
+                model.layout
     in
-        ( { model | route = currentRoute }, Cmd.none )
+        ( { model
+            | route = currentRoute
+            , layout = currentLayout
+            }, Cmd.none )
 
 
 -- MAIN

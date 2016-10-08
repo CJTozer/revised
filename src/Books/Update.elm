@@ -1,9 +1,9 @@
 module Books.Update exposing (..)
 
 import Utils
+import Messages
 import Books.Messages exposing (Msg(..))
 import Books.Models exposing (Book)
-import Messages
 import Layouts exposing (Layout(BookPage))
 
 import Navigation
@@ -19,5 +19,9 @@ update message books =
             ( books, Cmd.none )
 
         ShowBook book ->
-            --( books, Navigation.newUrl ("#books/" ++ toString(id)))
-            ( books, Utils.succeedCmd (Messages.UpdateLayout (BookPage book)) )
+            let
+                cmds = Cmd.batch [ Navigation.newUrl ("#books/" ++ toString(book.book_id))
+                    , Utils.succeedCmd (Messages.UpdateLayout (BookPage book))
+                    ]
+            in
+                ( books, cmds )
