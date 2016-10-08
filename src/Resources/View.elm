@@ -1,5 +1,7 @@
 module Resources.View exposing (..)
 
+import Dict exposing (Dict)
+
 import Html exposing (..)
 import Html.Attributes exposing (class)
 
@@ -9,17 +11,24 @@ import Resources.Messages exposing (Msg)
 import Styles
 
 -- TODO - show 'available' and 'loading' resources differently...
-resourcesList : List Resource -> List Int -> Html Msg
+resourcesList : Dict Int Resource -> List Int -> Html Msg
 resourcesList allResources resourceIds =
     let
         resourceRow : Int -> Html Msg
-        resourceRow resourceId =
-            tr [ Styles.clickable ]
-                [ td []
-                    [ text "...Resource..." ]
-                , td []
-                    [ text (toString resourceId) ]
-                ]
+        resourceRow resourceId = case Dict.get resourceId allResources of
+            Just res ->
+                tr [ Styles.clickable ]
+                    [ td []
+                        [ text res.text ]
+                    , td []
+                        [ text res.resource_type ]
+                    ]
+            Nothing ->
+                tr []
+                    [ td []
+                        [ text "...Loading..." ]
+                    , td [] []
+                    ]
         sortedResources : List Int
         sortedResources = Debug.log "Resources" (List.sort resourceIds)
     in
@@ -27,8 +36,8 @@ resourcesList allResources resourceIds =
             [ table [ class "bordered highlight" ]
                 [ thead []
                     [ tr []
-                        [ th [] [ text "Col1" ]
-                        , th [] [ text "Col2" ]
+                        [ th [] [ text "Resource Text" ]
+                        , th [] [ text "Resource Type" ]
                         ]
                     ]
                 , tbody []
