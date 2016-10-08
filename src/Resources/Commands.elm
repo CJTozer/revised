@@ -13,7 +13,7 @@ fetchOneResource resourceId =
 
 fetchResourceUrl : Int -> String
 fetchResourceUrl resourceId =
-    "http://revised-server.herokuapp.com/v1/resources/" ++ toString(resourceId)
+    "https://revised-server.herokuapp.com/v1/resources/" ++ toString(resourceId)
 
 
 resourceDecoder : Decode.Decoder Resource
