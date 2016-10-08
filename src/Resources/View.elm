@@ -8,8 +8,9 @@ import Resources.Messages exposing (Msg)
 
 import Styles
 
-resourcesList : List Int -> Html Msg
-resourcesList resources =
+-- TODO - show 'available' and 'loading' resources differently...
+resourcesList : List Resource -> List Int -> Html Msg
+resourcesList allResources resourceIds =
     let
         resourceRow : Int -> Html Msg
         resourceRow resourceId =
@@ -20,7 +21,7 @@ resourcesList resources =
                     [ text (toString resourceId) ]
                 ]
         sortedResources : List Int
-        sortedResources = Debug.log "Resources" (List.sort resources)
+        sortedResources = Debug.log "Resources" (List.sort resourceIds)
     in
         div []
             [ table [ class "bordered highlight" ]

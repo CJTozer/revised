@@ -8,9 +8,6 @@ import Html.App
 import Books.Models exposing (Book)
 import Books.Messages exposing (..)
 
-import Resources.View exposing (resourcesList)
-import Resources.Models exposing (initialModel)
-
 import Styles
 
 bookList : List Book -> Html Msg

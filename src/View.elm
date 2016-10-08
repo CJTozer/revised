@@ -29,7 +29,7 @@ view model =
                 , main' []
                     [ div [ class "container" ]
                         [ Html.App.map BooksMsg (bookHeader book)
-                        , Html.App.map ResourcesMsg (resourcesList (Maybe.withDefault [] book.resources))
+                        , Html.App.map ResourcesMsg (resourcesList model.resources (Maybe.withDefault [] book.resources))
                         ]
                     ]
                 , pageFooter

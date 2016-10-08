@@ -8,9 +8,8 @@ import Resources.Update
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     let
-        ( newModel, msgCmd ) =
-            handleMessage msg model
-        moreCmds = dataRetrieval model
+        ( newModel, msgCmd ) = handleMessage msg model
+        moreCmds = dataRetrieval newModel
         allCmds = msgCmd :: moreCmds
     in
         ( newModel, Cmd.batch allCmds )

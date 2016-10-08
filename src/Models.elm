@@ -9,6 +9,7 @@ type alias Model =
     { route : Routing.Route
     , layout : Layout
     , books : List Book
+    -- TODO - perhaps more sensible to store this as a Map?
     , resources : List Resource
     }
 

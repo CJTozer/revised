@@ -6,8 +6,8 @@ import Task
 import Resources.Models exposing (Resource)
 import Resources.Messages exposing (Msg(..))
 
-fetchOne : Int -> Cmd Msg
-fetchOne resourceId =
+fetchOneResource : Int -> Cmd Msg
+fetchOneResource resourceId =
     Http.get resourceDecoder (fetchResourceUrl resourceId)
         |> Task.perform FetchFail FetchDone
 
