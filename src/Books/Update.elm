@@ -1,12 +1,15 @@
 module Books.Update exposing (..)
 
+import Utils
 import Books.Messages exposing (Msg(..))
 import Books.Models exposing (Book)
+import Messages
+import Layouts exposing (Layout(BookPage))
 
 import Navigation
 
 
-update : Msg -> List Book -> ( List Book, Cmd Msg )
+update : Msg -> List Book -> ( List Book, Cmd Messages.Msg )
 update message books =
     case message of
         FetchAllDone newBooks ->
@@ -17,10 +20,4 @@ update message books =
 
         ShowBook book ->
             --( books, Navigation.newUrl ("#books/" ++ toString(id)))
-            ( books, Cmd.none )
-
-        Ignore msg ->
-            let
-                _ = Debug.log "Books/Update.elm - UNHANDLED MESSAGE" msg
-            in
-                ( books, Cmd.none )
+            ( books, Utils.succeedCmd (Messages.UpdateLayout (BookPage book)) )

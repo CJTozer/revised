@@ -24,13 +24,15 @@ handleMessage msg model =
                 ( updatedBooks, cmd ) =
                     Books.Update.update subMsg model.books
             in
-                ( { model | books = updatedBooks }, Cmd.map BooksMsg cmd )
+                ( { model | books = updatedBooks }, cmd )
         ResourcesMsg subMsg ->
             let
                 ( updatedResources, cmd ) =
                     Resources.Update.update subMsg model.resources
             in
                 ( { model | resources = updatedResources }, Cmd.map ResourcesMsg cmd )
+        UpdateLayout newLayout ->
+            ( { model | layout = newLayout }, Cmd.none )
 
 dataRetrieval : Model -> ( List (Cmd Msg) )
 dataRetrieval model =
