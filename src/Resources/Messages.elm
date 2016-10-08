@@ -5,6 +5,5 @@ import Http
 import Resources.Models exposing (Resource)
 
 type Msg
-    = GetResource Int
-    | FetchDone Resource
+    = FetchDone Resource
     | FetchFail Http.Error
