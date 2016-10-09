@@ -17,3 +17,18 @@ The aim of this project is to create appropriate secondary sources that are appr
 * Written in Elm
 * Served up by Heroku: [here](https://revised-web.herokuapp.com/)
 * Back-end API provided by a Go webserver [revised-server](https://github.com/CJTozer/revised-server#readme) - aim is to back this with [Google cloud platform](https://cloud.google.com/storage/docs/json_api/v1/) for storage
+
+## Ideas/To Do
+
+* Types of resource?
+  * [ ] Pure text
+    * [ ] Marked-up text
+  * [ ] Links
+  * [ ] Images
+  * [ ] Maps
+    * [ ] Basic (i.e. images, but not stored locally - use an API?)
+    * [ ] With additional content - e.g. markers
+    * [ ] Dynamic (see also: Timelines)
+  * [ ] Timelines
+    * [ ] Static
+    * [ ] Dynamic - e.g. [this](https://codyhouse.co/gem/vertical-timeline/)
