@@ -20,15 +20,15 @@ The aim of this project is to create appropriate secondary sources that are appr
 
 ## Ideas/To Do
 
-* Types of resource?
-  * [ ] Pure text
-    * [ ] Marked-up text
-  * [ ] Links
-  * [ ] Images
-  * [ ] Maps
-    * [ ] Basic (i.e. images, but not stored locally - use an API?)
-    * [ ] With additional content - e.g. markers
-    * [ ] Dynamic (see also: Timelines)
-  * [ ] Timelines
-    * [ ] Static
-    * [ ] Dynamic - e.g. [this](https://codyhouse.co/gem/vertical-timeline/)
+### Types of resource
+* [ ] Pure text
+  * [ ] Marked-up text
+* [ ] Links
+* [ ] Images
+* [ ] Maps
+  * [ ] Basic (i.e. images, but not stored locally - use an API?)
+  * [ ] With additional content - e.g. markers
+  * [ ] Dynamic (see also: Timelines)
+* [ ] Timelines
+  * [ ] Static
+  * [ ] Dynamic - e.g. [this](https://codyhouse.co/gem/vertical-timeline/)
