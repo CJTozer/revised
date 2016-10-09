@@ -3,7 +3,7 @@ module Resources.View exposing (..)
 import Dict exposing (Dict)
 
 import Html exposing (..)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (class, colspan)
 
 import Resources.Models exposing (Resource)
 import Resources.Messages exposing (Msg)
@@ -25,9 +25,11 @@ resourcesList allResources resourceIds =
                     ]
             Nothing ->
                 tr []
-                    [ td []
-                        [ text "...Loading..." ]
-                    , td [] []
+                    [ td [ colspan 2 ]
+                        [ div [ class "progress blue" ]
+                            [ div [ class "indeterminate blue lighten-3" ] []
+                            ]
+                        ]
                     ]
         sortedResources : List Int
         sortedResources = Debug.log "Resources" (List.sort resourceIds)
