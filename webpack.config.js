@@ -3,7 +3,7 @@ var path = require("path");
 module.exports = {
   entry: {
     revised: [
-      './src/index.js'
+      './js/index.js'
     ]
   },
 
