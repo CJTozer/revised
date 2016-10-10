@@ -30,7 +30,7 @@ view model =
                     [ div [ class "container" ]
                         [ Html.App.map BooksMsg (bookHeader book)
                         , Html.App.map ResourcesMsg (resourcesList model.resources (Maybe.withDefault [] book.resources))
-                        , img [ class "materialboxed", attribute "data-caption" "A picture of some deer and tons of trees", src "http://th01.deviantart.net/fs70/PRE/i/2013/126/1/e/nature_portrait_by_pw_fotografie-d63tx0n.jpg", attribute "width" "250" ] []
+                        , img [ class "materialboxed", attribute "data-caption" "Kittens.  Cuz.", src "https://placekitten.com/749/801", attribute "width" "300" ] []
                         ]
                     ]
                 , pageFooter
