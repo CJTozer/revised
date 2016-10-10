@@ -1,7 +1,14 @@
 'use strict';
 
-// http://materializecss.com/getting-started.html
+// Include materialize CSS
 require('materialize-css/dist/css/materialize.css');
+// require('materialize-css/dist/js/materialize.js');
+
+// Extra CSS
+require('./extra.css');
+
+// Extra JS for running materialize code when the DOM changes
+require('./dom_monitor.js');
 
 // Require index.html so it gets copied to dist
 require('./index.html');
