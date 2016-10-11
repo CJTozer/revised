@@ -2,7 +2,6 @@ module Components.Header exposing (..)
 
 import Html exposing (..)
 import Html.Attributes exposing (class, href, id)
-
 import Messages exposing (Msg)
 
 

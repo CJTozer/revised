@@ -1,7 +1,6 @@
 module Main exposing (..)
 
 import Html.App
-
 import Navigation
 import Messages exposing (Msg(..))
 import Models exposing (Model, initialModel)
@@ -17,6 +16,7 @@ init result =
     let
         currentRoute =
             Routing.routeFromResult result
+
         --TODO - calculate this properly...
         currentLayout =
             FrontPage
@@ -29,23 +29,33 @@ urlUpdate result model =
     let
         currentRoute =
             Routing.routeFromResult result
-        currentLayout = layoutFromRoute currentRoute model
+
+        currentLayout =
+            layoutFromRoute currentRoute model
     in
         ( { model
             | route = currentRoute
             , layout = currentLayout
-            }, Cmd.none )
+          }
+        , Cmd.none
+        )
+
 
 layoutFromRoute : Route -> Model -> Layout
 layoutFromRoute route model =
     case route of
         BooksRoute ->
             FrontPage
+
         _ ->
             -- Handled elswhere, one hopes!
             model.layout
 
+
+
 -- MAIN
+
+
 main : Program Never
 main =
     Navigation.program Routing.parser

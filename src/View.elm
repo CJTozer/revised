@@ -3,11 +3,9 @@ module View exposing (..)
 import Html exposing (..)
 import Html.App
 import Html.Attributes exposing (class, attribute, src)
-
 import Models exposing (Model)
 import Messages exposing (..)
 import Layouts exposing (Layout(..))
-
 import Books.View exposing (bookList, bookHeader)
 import Resources.View exposing (resourcesList)
 import Components.Header exposing (pageHeader)
@@ -23,6 +21,7 @@ view model =
                 , main' [] [ Html.App.map BooksMsg (bookList model.books) ]
                 , pageFooter
                 ]
+
         BookPage book ->
             body []
                 [ pageHeader
@@ -35,9 +34,3 @@ view model =
                     ]
                 , pageFooter
                 ]
-        --NotFoundRoute ->
-        --    div []
-        --        [ pageHeader
-        --        , main' [] [ text "PAGE NOT FOUND" ]
-        --        , pageFooter
-        --        ]

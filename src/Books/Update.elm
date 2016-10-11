@@ -5,7 +5,6 @@ import Messages
 import Books.Messages exposing (Msg(..))
 import Books.Models exposing (Book)
 import Layouts exposing (Layout(BookPage))
-
 import Navigation
 
 
@@ -20,8 +19,10 @@ update message books =
 
         ShowBook book ->
             let
-                cmds = Cmd.batch [ Navigation.newUrl ("#books/" ++ toString(book.book_id))
-                    , Utils.succeedCmd (Messages.UpdateLayout (BookPage book))
-                    ]
+                cmds =
+                    Cmd.batch
+                        [ Navigation.newUrl ("#books/" ++ toString (book.book_id))
+                        , Utils.succeedCmd (Messages.UpdateLayout (BookPage book))
+                        ]
             in
                 ( books, cmds )

@@ -4,11 +4,10 @@ import Html exposing (..)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Html.App
-
 import Books.Models exposing (Book)
 import Books.Messages exposing (..)
-
 import Styles
+
 
 bookList : List Book -> Html Msg
 bookList books =
@@ -37,6 +36,7 @@ bookList books =
                     ]
                 ]
             ]
+
 
 bookHeader : Book -> Html Msg
 bookHeader book =

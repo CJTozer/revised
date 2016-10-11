@@ -5,7 +5,6 @@ import Json.Decode as Decode exposing ((:=))
 import Task
 import Books.Models exposing (Book)
 import Books.Messages exposing (..)
-
 import Resources.Models exposing (Resource)
 import Resources.Commands exposing (resourceDecoder)
 
