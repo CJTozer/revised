@@ -1,5 +1,19 @@
-/dist
-/elm-stuff
-/node_modules
+# Project files and NPM debug
 /*.sublime-*
 /npm-debug.log
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log*
+testem.log
