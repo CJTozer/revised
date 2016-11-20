@@ -1,28 +1,33 @@
-<header>
-    <nav class="top-nav teal lighten-2">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="/" class="brand-logo">reVISed</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="https://github.com/CJTozer/revised/issues">Issues</a></li>
-                    <li><a href="https://github.com/CJTozer/revised#readme">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
 <body>
-    {{outlet}}
-</body>
-<footer class="page-footer teal lighten-3">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 right-align">
-                <a href="https://github.com/CJTozer/revised">Contributions always welcome!</a>
+    <header>
+        <nav class="top-nav teal lighten-2">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo center">reVISed</a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li>{{#link-to 'titles'}}Titles{{/link-to}}</li>
+                    </ul>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="https://github.com/CJTozer/revised/issues">Issues</a></li>
+                        <li><a href="https://github.com/CJTozer/revised#readme">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {{outlet}}
+    </main>
+    <footer class="page-footer teal lighten-3">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 right-align">
+                    <a href="https://github.com/CJTozer/revised">Contributions always welcome!</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">© 2016 C J Tozer</div>
-    </div>
-</footer>
+        <div class="footer-copyright">
+            <div class="container">© 2016 C J Tozer</div>
+        </div>
+    </footer>
+</body>
