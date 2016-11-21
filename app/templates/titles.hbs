@@ -9,14 +9,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr style="cursor: pointer;">
-                    <td>DATA GOES</td>
-                    <td>HERE</td>
-                </tr>
-                <tr style="cursor: pointer;">
-                    <td>AND HERE</td>
-                    <td>...</td>
-                </tr>
+                {{#each model as |listing|}}
+                    <tr class="titles-entry" style="cursor: pointer;">
+                        <td>{{listing.title}}</td>
+                        <td>{{listing.author}}</td>
+                    </tr>
+                {{/each}}
             </tbody>
         </table>
     </div>
