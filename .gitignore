@@ -1,6 +1,5 @@
-# Project files and NPM debug
+# Project files
 /*.sublime-*
-/npm-debug.log
 
 # compiled output
 /dist

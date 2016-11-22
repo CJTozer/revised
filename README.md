@@ -14,7 +14,7 @@ The aim of this project is to create appropriate secondary sources that are appr
 ## The Current Picture
 
 * Barely started - no real functionality, but I've had a good play with the frameworks
-* Written in Elm
+* Written with [EmberJS](http://emberjs.com/)
 * Served up by Heroku: [here](https://revised-web.herokuapp.com/)
 * Back-end API provided by a Go webserver [revised-server](https://github.com/CJTozer/revised-server#readme) - aim is to back this with [Google cloud platform](https://cloud.google.com/storage/docs/json_api/v1/) for storage
 
