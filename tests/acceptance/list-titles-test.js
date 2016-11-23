@@ -18,6 +18,6 @@ test('should list books.', function (assert) {
 
   andThen(function () {
     assert.equal(find('.titles-entry').length, 3, 'should see 3 books');
-    assert.equal(find('.titles-entry:first').text(), titles[0].title);
+    assert.equal(find('.titles-entry:first td:first').text().trim(), titles[0].title);
   });
 });
