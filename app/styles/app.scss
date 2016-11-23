@@ -13,3 +13,14 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.title-heading {
+    display: inline-block;
+    font-style: italic;
+}
+
+.author-heading {
+    display: inline-block;
+    margin-left: 30px;
+    font-weight: lighter;
+}

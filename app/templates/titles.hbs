@@ -10,8 +10,12 @@
             </thead>
             <tbody>
                 {{#each model as |listing|}}
-                    <tr class="titles-entry" style="cursor: pointer;">
-                        <td>{{listing.title}}</td>
+                    <tr class="titles-entry"
+                        style="cursor: pointer;">
+                        <td>{{#link-to 'title' listing.id}}
+                            {{listing.title}}
+                            {{/link-to}}
+                        </td>
                         <td>{{listing.author}}</td>
                     </tr>
                 {{/each}}
