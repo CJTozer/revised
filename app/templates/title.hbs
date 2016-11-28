@@ -1,27 +1,5 @@
 <div class="container">
     <h1 class="title-heading">{{model.title}}  </h1>
     <h4 class="author-heading">{{model.author}}</h4>
-    <div>
-        <ul class="collapsible" data-collapsible="accordion">
-            <li>
-              <div class="collapsible-header"><i class="material-icons">photo</i>Image Resource</div>
-              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">link</i>Link Resource</div>
-              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">short_text</i>Text Resource</div>
-              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-            </li>
-        </ul>
-    </div>
+    {{resources-list}}
 </div>
-
-{{!-- // Need this extra JS for Materialized
-console.log('HERE');
-$(document).ready(function(){
-  console.log($('.collapsible'));
-  $('.collapsible').collapsible();
-}); --}}
