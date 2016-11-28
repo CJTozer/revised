@@ -1,17 +1,11 @@
 {{!-- Need to pass in data! --}}
 <div>
     <ul class="collapsible" data-collapsible="collapsible">
-        <li>
-          <div class="collapsible-header"><i class="material-icons">photo</i>Image Resource</div>
-          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">link</i>Link Resource</div>
-          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">short_text</i>Text Resource</div>
-          <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-        </li>
+        {{#each resources as |resource|}}
+            <li>
+              <div class="collapsible-header"><i class="material-icons">photo</i>Image Resource {{resource.text}}</div>
+              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+        {{/each}}
     </ul>
 </div>
