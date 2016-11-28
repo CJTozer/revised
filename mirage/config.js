@@ -4,4 +4,8 @@ export default function() {
   this.get('https://revised-server.herokuapp.com/v1/books', (schema) => {
     return schema.books.all();
   });
+
+  this.get('https://revised-server.herokuapp.com/v1/books/:id', (schema, request) => {
+    return schema.books.find(request.params.id);
+  });
 }
