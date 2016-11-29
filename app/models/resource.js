@@ -6,10 +6,7 @@ export default DS.Model.extend({
   resource_type: DS.attr(),
 
   icon: Ember.computed('resource_type', function() {
-    console.log(this);
-    console.log(this.get('resource_type'));
-    console.log(Object.keys(this));
-
+    // Simply switch on resource_type to get the icon name
     switch(this.get('resource_type')) {
     case "Text":
       return "short_text";
@@ -20,5 +17,13 @@ export default DS.Model.extend({
     default:
       return "help";
     }
-  })
+  }),
+
+  // Helpers for handlebars
+  isImage: Ember.computed('resource_type', function() {
+    return this.get('resource_type') === 'Image';
+  }),
+  isLink: Ember.computed('resource_type', function() {
+    return this.get('resource_type') === 'Link';
+  }),
 });

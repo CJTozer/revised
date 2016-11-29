@@ -3,9 +3,20 @@
     <ul class="collapsible" data-collapsible="collapsible">
         {{#each resources as |resource|}}
             <li>
-              <div class="collapsible-header"><i class="material-icons">{{resource.icon}}</i>{{resource.resource_type}}</div>
-              <div class="collapsible-body"><p>{{resource.text}}</p></div>
+                <div class="collapsible-header"><i class="material-icons">{{resource.icon}}</i>{{resource.resource_type}}</div>
+                <div class="collapsible-body">
+                    {{#if resource.isImage}}
+                        <p><img src="{{resource.text}}" alt="" /></p>
+                    {{else if resource.isLink}}
+                        <p><a href="{{resource.text}}">A link</a></p>
+                    {{else}}
+                        <p>{{resource.text}}</p>
+                    {{/if}}
+                </div>
             </li>
+        {{else}}
+            {{!-- No items in the resources list --}}
+            <li>EMPTY LIST!!!</li>
         {{/each}}
     </ul>
 </div>
