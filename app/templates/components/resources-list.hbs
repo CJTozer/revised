@@ -3,8 +3,8 @@
     <ul class="collapsible" data-collapsible="collapsible">
         {{#each resources as |resource|}}
             <li>
-              <div class="collapsible-header"><i class="material-icons">photo</i>Image Resource {{resource.text}}</div>
-              <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+              <div class="collapsible-header"><i class="material-icons">{{resource.icon}}</i>{{resource.text}}</div>
+              <div class="collapsible-body"><p>{{resource.resourceType}}</p></div>
             </li>
         {{/each}}
     </ul>
