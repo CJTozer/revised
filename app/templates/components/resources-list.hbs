@@ -6,7 +6,7 @@
                 <div class="collapsible-header"><i class="material-icons">{{resource.icon}}</i>{{resource.resource_type}}</div>
                 <div class="collapsible-body">
                     {{#if resource.isImage}}
-                        <p><img src="{{resource.text}}" alt="" /></p>
+                        <p>{{resource-image resource=resource}}</p>
                     {{else if resource.isLink}}
                         <p><a href="{{resource.text}}">A link</a></p>
                     {{else}}

@@ -18,7 +18,7 @@ export default Factory.extend({
     case 0:
       return `Some text for resource ${i}`;
     case 1:
-      return `https://placekitten.com/${200+i}/${200+i}`;
+      return `https://placekitten.com/${800+i}/${600+i}`;
     case 2:
       return "https://en.wikipedia.org/wiki/Special:Random";
     default:
