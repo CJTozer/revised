@@ -16,7 +16,7 @@ export default Factory.extend({
   text(i) {
     switch(i % 3) {
     case 0:
-      return "Some text for this resource";
+      return `Some text for resource ${i}`;
     case 1:
       return `https://placekitten.com/${200+i}/${200+i}`;
     case 2:
