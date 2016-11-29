@@ -1,7 +1,7 @@
 import { Factory } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  resourceType(i) {
+  resource_type(i) {
     switch(i % 3) {
     case 0:
       return "Text";

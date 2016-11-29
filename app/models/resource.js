@@ -3,14 +3,14 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   text: DS.attr(),
-  resourceType: DS.attr(),
+  resource_type: DS.attr(),
 
-  icon: Ember.computed('resourceType', function() {
+  icon: Ember.computed('resource_type', function() {
     console.log(this);
-    console.log(this.get('resourceType'));
+    console.log(this.get('resource_type'));
     console.log(Object.keys(this));
 
-    switch(this.get('resourceType')) {
+    switch(this.get('resource_type')) {
     case "Text":
       return "short_text";
     case "Image":
