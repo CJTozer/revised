@@ -13,6 +13,18 @@ export default Factory.extend({
       return "Unknown";
     }
   },
+  description(i) {
+    switch(i % 3) {
+    case 0:
+      return `Information about ${i}`;
+    case 1:
+      return `An image of ${i}`;
+    case 2:
+      return `Wikipedia: Random Article`;
+    default:
+      return "!!! Unknown !!!";
+    }
+  },
   text(i) {
     switch(i % 3) {
     case 0:

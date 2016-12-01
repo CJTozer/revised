@@ -2,6 +2,7 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  description: DS.attr(),
   text: DS.attr(),
   resource_type: DS.attr(),
 
