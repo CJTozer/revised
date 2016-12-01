@@ -37,4 +37,6 @@ main {
 
 .collapsible-header {
     @extend .unselectable;
+    @extend .grey;
+    @extend .lighten-4;
 }
