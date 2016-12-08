@@ -4,6 +4,14 @@ export default function() {
   this.get('https://revised-server.herokuapp.com/v1/books', (schema) => {
     return schema.books.all();
   });
+  this.post('https://revised-server.herokuapp.com/v1/books', (schema, request) => {
+    // Convert JSON body to an object
+    var requestObject = JSON.parse(request.requestBody);
+    // Create the new DB entry, and update the request object (with the ID)
+    requestObject['book'] = schema.db.books.insert(requestObject['book']);
+    console.log(requestObject);
+    return requestObject;
+  });
 
   this.get('https://revised-server.herokuapp.com/v1/books/:id', (schema, request) => {
     return schema.books.find(request.params.id);
