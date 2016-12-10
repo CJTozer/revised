@@ -8,7 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('titles', function() {
-    this.route('list', {path: '/'});
+    this.route('list', {path: '/'}); // Default route
+    this.route('list');
     this.route('new');
   });
 
