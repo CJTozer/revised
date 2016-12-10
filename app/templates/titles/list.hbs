@@ -25,12 +25,13 @@
         </div>
         <div class="col s2" style="margin-top: 40px;">
             {{#animated-tooltip}}
-                <a class="btn-floating right btn-large waves-effect waves-light tooltipped"
+                {{#link-to 'titles.new'
+                    class="btn-floating right btn-large waves-effect waves-light tooltipped"
                     data-position="left"
                     data-tooltip="Add New Title"
-                    data-delay="50">
+                    data-delay="50"}}
                     <i class="material-icons">add</i>
-                </a>
+                {{/link-to}}
             {{/animated-tooltip}}
         </div>
     </div>
