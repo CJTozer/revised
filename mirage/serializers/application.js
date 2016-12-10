@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { RestSerializer } from 'ember-cli-mirage';
 
 // serializers/application.js
