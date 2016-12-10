@@ -7,6 +7,7 @@ export default Ember.Component.extend({
   },
 
   willDestroyElement: function () {
+    this.$('.tooltipped').tooltip('remove');
     this.get('tooltipped').stop();
   },
 });
