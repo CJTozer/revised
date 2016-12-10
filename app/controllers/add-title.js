@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     submitAction : function(){
       console.log(this.model);
       this.model.save();
+      this.transitionToRoute('titles');
     }
   }
 });
