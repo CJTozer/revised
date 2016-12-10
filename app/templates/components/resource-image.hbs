@@ -4,7 +4,9 @@
 </div>
 <div class="collapsible-body">
     <p>
-        {{material-boxed src=resource.text}}
+        {{#material-boxed}}
+            <img class="materialboxed" width="100%" src="{{resource.text}}" alt="" />
+        {{/material-boxed}}
     </p>
 </div>
 
