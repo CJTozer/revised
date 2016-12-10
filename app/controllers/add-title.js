@@ -3,9 +3,9 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     submitAction : function(){
-      console.log(this.model);
       this.model.save();
-      this.transitionToRoute('titles');
+      // Model hasn't got its ID yet...
+      this.transitionToRoute('title', this.model);
     }
   }
 });
