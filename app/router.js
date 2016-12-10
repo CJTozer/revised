@@ -15,6 +15,7 @@ Router.map(function() {
 
   this.route("title", { path: "title/:title_id" }, function() {
     this.route("view", { path: "/" }); // Default route
+    this.route('edit');
   });
 
   this.route('resource', {path: 'resources/:resource_id'});
