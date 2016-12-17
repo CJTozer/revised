@@ -7,6 +7,8 @@
                     {{resource-image resource=resource}}
                 {{else if resource.isLink}}
                     {{resource-link resource=resource}}
+                {{else if resource.isMap}}
+                    {{resource-map resource=resource}}
                 {{else}}
                     {{resource-text resource=resource}}
                 {{/if}}

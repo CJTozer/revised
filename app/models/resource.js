@@ -15,6 +15,8 @@ export default DS.Model.extend({
       return "photo";
     case "Link":
       return "link";
+    case "Map":
+      return "map";
     default:
       return "help";
     }
@@ -26,5 +28,8 @@ export default DS.Model.extend({
   }),
   isLink: Ember.computed('resource_type', function() {
     return this.get('resource_type') === 'Link';
+  }),
+  isMap: Ember.computed('resource_type', function() {
+    return this.get('resource_type') === 'Map';
   }),
 });
