@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend( {
   model() {
-    return this.get('store').findAll('book');
-  }
-});
+    return this.get( 'store' ).findAll( 'book' );
+  },
+} );

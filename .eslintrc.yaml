@@ -1,6 +1,8 @@
 extends: idiomatic
+root: true
 env:
   node: true
+  browser: true
 rules:
   no-console: off
   func-names: 0

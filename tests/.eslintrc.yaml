@@ -1,0 +1,4 @@
+env:
+  embertest: true
+globals:
+  server: false

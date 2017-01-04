@@ -1,22 +1,23 @@
 /*jshint node:true*/
 /* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var nodeSass = require('node-sass'); // loads the version in your package.json
+var
+  EmberApp = require( 'ember-cli/lib/broccoli/ember-app' ),
+  nodeSass = require( 'node-sass' );
 
-module.exports = function(defaults) {
-  var app = new EmberApp(defaults, {
+module.exports = function( defaults ) {
+  var app = new EmberApp( defaults, {
     // Add options here
     sassOptions: {
       includePaths: [
-        'bower_components/materialize/sass'
+        'bower_components/materialize/sass',
       ],
-      nodeSass: nodeSass // Workaround for ember-cli-sass bug https://github.com/aexmachina/ember-cli-sass/issues/117
+      nodeSass: nodeSass, // Workaround for ember-cli-sass bug https://github.com/aexmachina/ember-cli-sass/issues/117
     },
     // Turn off JShint, use ESlint instead.
     'ember-cli-qunit': {
       useLintTree: false,
     },
-  });
+  } );
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
