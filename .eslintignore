@@ -1,0 +1,8 @@
+# Not our code
+/vendor
+
+# Duplicate or not our code
+/dist
+
+# Temp
+/tmp
