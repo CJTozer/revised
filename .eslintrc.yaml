@@ -3,6 +3,7 @@ root: true
 env:
   node: true
   browser: true
+  es6: true
 rules:
   no-console: off
   func-names: 0

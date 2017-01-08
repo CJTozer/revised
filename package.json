@@ -57,5 +57,8 @@
   "bugs": {
     "url": "https://github.com/CJTozer/revised/issues"
   },
-  "homepage": "https://github.com/CJTozer/revised#readme"
+  "homepage": "https://github.com/CJTozer/revised#readme",
+  "dependencies": {
+    "map-maker": "^0.3.2"
+  }
 }
