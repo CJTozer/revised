@@ -19,6 +19,8 @@ Router.map( function() {
   } );
 
   this.route( 'resource', { path: 'resources/:resource_id' } );
+
+  this.route( 'map', { path: 'maps/:map_id' } );
 } );
 
 export default Router;

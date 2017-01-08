@@ -13,14 +13,4 @@ test( 'it renders', function( assert ) {
 
   assert.ok( this.$( '.collapsible-header' ) );
   assert.ok( this.$( '.collapsible-body' ) );
-
-  // Template block usage:
-  this.render( hbs`
-    {{#resources-list}}
-      template block text
-    {{/resources-list}}
-  ` );
-
-  assert.ok( this.$( '.collapsible-header' ) );
-  assert.ok( this.$( '.collapsible-body' ) );
 } );

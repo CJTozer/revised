@@ -4,6 +4,10 @@
 </div>
 <div class="collapsible-body">
     <p>
-        {{resource.text}}
+        {{#if resource.map.svg_data.isPending}}
+            Loading...
+        {{else}}
+            {{resource.map.retrieved_svg_data}}
+        {{/if}}
     </p>
 </div>

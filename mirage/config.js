@@ -19,4 +19,8 @@ export default function() {
   this.get( 'https://revised-server.herokuapp.com/v1/resources/:id', ( schema, request ) => {
     return schema.resources.find( request.params.id );
   } );
+
+  this.get( 'https://revised-server.herokuapp.com/v1/maps/:id', ( schema, request ) => {
+    return schema.maps.find( request.params.id );
+  } );
 }

@@ -5,6 +5,9 @@ export default DS.Model.extend( {
   description: DS.attr(),
   text: DS.attr(),
   resource_type: DS.attr(),
+  // 'belongsTo' is a bit of a misnomer here, but is the way to get a one-to-many
+  // relationship in this direction.
+  map: DS.belongsTo( 'map', { async: true } ),
 
   icon: Ember.computed( 'resource_type', function() {
     // Simply switch on resource_type to get the icon name

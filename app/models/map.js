@@ -3,8 +3,11 @@ import DS from 'ember-data';
 // import MapBuilder from 'map-maker';
 
 export default DS.Model.extend( {
-  specObj: DS.attr(),
-  svgData: Ember.computed( 'spec_obj', function() {
+  spec_obj: DS.attr(),
+  // Hack for now as I can't get Ember.computed, and the promise return to work.
+  retrieved_svg_data: DS.attr(),
+  svg_data: Ember.computed( 'spec_obj', function() {
+    var self = this;
     return DS.PromiseObject.create( {
       // promise: new Promise( function( resolve, reject ) {
       promise: new Promise( function( resolve ) {
@@ -14,10 +17,14 @@ export default DS.Model.extend( {
         //     reject( err );
         //   } )
         //   .onSuccess( ( data ) => {
+        //     self.set('retrieved_svg_data', data);
         //     resolve( data );
         //   } )
         //   .build_map();
-        resolve( 'OK' );
+        Ember.run.later(function() {
+          self.set('retrieved_svg_data', 'OKOKOK');
+          resolve( 'OK' );
+        }, 1000);
       } ),
     } );
   } ),

@@ -43,4 +43,12 @@ export default Factory.extend( {
       return '!!! Not implemented !!!';
     }
   },
+  map( i ) {
+    switch ( i % 4 ) {
+    case 3:
+      return 1;
+    default:
+      return null;
+    }
+  },
 } );
