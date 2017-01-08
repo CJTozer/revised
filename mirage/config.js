@@ -8,7 +8,7 @@ export default function() {
     // Convert JSON body to an object
     var requestObject = JSON.parse( request.requestBody );
     // Create the new DB entry, and update the request object (with the ID)
-    requestObject[ 'book' ] = schema.db.books.insert( requestObject[ 'book' ] );
+    requestObject.book = schema.db.books.insert( requestObject.book );
     return requestObject;
   } );
 

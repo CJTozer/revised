@@ -17,5 +17,7 @@ test( 'async.assert() it exists', function( assert ) {
   model.get( 'svgData' ).then( function( data ) {
     assert.equal( data, 'OK' );
     done();
+  }, function( err ) {
+    assert.notOk( err );
   } );
 } );
