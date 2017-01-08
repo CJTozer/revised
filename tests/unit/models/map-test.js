@@ -5,8 +5,17 @@ moduleForModel( 'map', 'Unit | Model | map', {
   needs: [],
 } );
 
-test( 'it exists', function( assert ) {
-  let model = this.subject();
+test( 'async.assert() it exists', function( assert ) {
+  var
+    spec_obj = {
+      test: 'thing',
+    },
+    done = assert.async();
+  let model = this.subject( { specObj: spec_obj } );
   // let store = this.store();
   assert.ok( !!model );
+  model.get( 'svgData' ).then( function( data ) {
+    assert.equal( data, 'OK' );
+    done();
+  } );
 } );
