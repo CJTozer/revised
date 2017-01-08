@@ -11,14 +11,16 @@ test( 'it renders', function( assert ) {
 
   this.render( hbs`{{resource-image}}` );
 
-  assert.equal( this.$().text().trim(), '' );
+  assert.ok( this.$( '.collapsible-header' ) );
+  assert.ok( this.$( '.collapsible-body' ) );
 
   // Template block usage:
   this.render( hbs`
-    {{#resource-image}}
+    {{#resources-list}}
       template block text
-    {{/resource-image}}
+    {{/resources-list}}
   ` );
 
-  assert.equal( this.$().text().trim(), 'template block text' );
+  assert.ok( this.$( '.collapsible-header' ) );
+  assert.ok( this.$( '.collapsible-body' ) );
 } );
